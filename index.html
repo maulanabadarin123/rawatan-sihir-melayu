@@ -1,1 +1,527 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawatan Sihir Melayu — Atok Mohd Khoirul</title>
+    <meta name="description" content="Rawatan spiritual Melayu beretika oleh Atok Mohd Khoirul. Pengasih jarak jauh, pemikat hati, pemanis diri, keharmonian pasangan. Hubungi 011-6769-2891.">
+    <meta name="keywords" content="rawatan sihir melayu, rawatan pengasih, pemikat hati, pemanis diri, keharmonian pasangan, atok mohd khoirul">
+    <meta property="og:title" content="Rawatan Sihir Melayu — Atok Mohd Khoirul">
+    <meta property="og:description" content="Bimbingan spiritual beretika. Rawatan jarak jauh untuk keharmonian cinta & rumah tangga.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ms_MY">
+    <meta name="robots" content="index, follow">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#0F2A22',
+                        'forest-deep': '#091D17',
+                        cream: '#F4F1EA',
+                        'cream-warm': '#EAE5D9',
+                        gold: '#B9924A',
+                        'gold-soft': '#D4B37A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Instrument Serif"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background: #F4F1EA; -webkit-font-smoothing: antialiased; }
+
+        /* Garis halus */
+        .rule { height: 1px; background: rgba(15,42,34,0.12); }
+        .rule-light { height: 1px; background: rgba(244,241,234,0.15); }
+
+        /* Teks label */
+        .eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; }
+
+        /* Imej dalam bingkai halus */
+        .img-frame { position: relative; overflow: hidden; }
+        .img-frame img { transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+        .img-frame:hover img { transform: scale(1.04); }
+
+        /* Animasi masuk (reveal) */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+
+        /* Accordion */
+        .faq-item { border-top: 1px solid rgba(15,42,34,0.12); }
+        .faq-item:last-child { border-bottom: 1px solid rgba(15,42,34,0.12); }
+        .faq-q {
+            width: 100%; text-align: left; padding: 1.5rem 0;
+            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+            font-size: 1.05rem; font-weight: 500; color: #0F2A22;
+            transition: color .25s;
+        }
+        .faq-q:hover { color: #B9924A; }
+        .faq-q .indicator { position: relative; width: 14px; height: 14px; flex-shrink: 0; }
+        .faq-q .indicator::before, .faq-q .indicator::after {
+            content: ''; position: absolute; background: #0F2A22; transition: transform .3s ease;
+        }
+        .faq-q .indicator::before { width: 14px; height: 1px; top: 6.5px; left: 0; }
+        .faq-q .indicator::after { width: 1px; height: 14px; left: 6.5px; top: 0; }
+        .faq-q.active .indicator::after { transform: rotate(90deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+        .faq-a p { padding-bottom: 1.5rem; color: #4B5A55; line-height: 1.7; max-width: 52ch; }
+
+        /* Carousel */
+        .carousel-track { display: flex; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+        .carousel-slide { flex: 0 0 100%; padding-right: 1.5rem; }
+        @media(min-width: 768px){ .carousel-slide { flex: 0 0 50%; } }
+        @media(min-width: 1024px){ .carousel-slide { flex: 0 0 33.3333%; } }
+
+        /* Marquee (kecil, elegan) */
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-content { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+
+        /* Butang */
+        .btn-primary {
+            background: #0F2A22; color: #F4F1EA;
+            padding: 1rem 2rem; font-size: 0.85rem; letter-spacing: .05em; font-weight: 500;
+            transition: background .3s;
+        }
+        .btn-primary:hover { background: #091D17; }
+        .btn-ghost {
+            border: 1px solid rgba(15,42,34,0.25); color: #0F2A22;
+            padding: 1rem 2rem; font-size: 0.85rem; letter-spacing: .05em; font-weight: 500;
+            transition: all .3s;
+        }
+        .btn-ghost:hover { border-color: #0F2A22; background: rgba(15,42,34,0.04); }
+
+        /* Nombor besar */
+        .big-num { font-family: 'Instrument Serif', serif; line-height: 0.9; }
+    </style>
+</head>
+<body class="font-sans text-forest">
+
+    <!-- ================= NAV ================= -->
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/80 border-b border-forest/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-baseline gap-3">
+                <span class="font-serif text-2xl leading-none">RSM</span>
+                <span class="eyebrow text-forest/60 hidden sm:inline">Rawatan Sihir Melayu</span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-9">
+                <a href="#perkhidmatan" class="text-sm text-forest/70 hover:text-forest transition">Perkhidmatan</a>
+                <a href="#tentang" class="text-sm text-forest/70 hover:text-forest transition">Tentang</a>
+                <a href="#testimoni" class="text-sm text-forest/70 hover:text-forest transition">Testimoni</a>
+                <a href="#faq" class="text-sm text-forest/70 hover:text-forest transition">Soalan Lazim</a>
+            </nav>
+            <a href="https://wa.me/601167692891" target="_blank" rel="noopener" class="btn-primary text-xs">011-6769-2891</a>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="pt-28 lg:pt-40 pb-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+                <!-- Kiri: tipografi besar -->
+                <div class="lg:col-span-7">
+                    <p class="eyebrow text-gold mb-8 reveal">Kearifan Tempatan · Sejak 2009</p>
+                    <h1 class="font-serif text-[3.2rem] sm:text-[4.5rem] lg:text-[5.5rem] leading-[0.95] tracking-tight reveal">
+                        Rawatan<br>
+                        pengasih,<br>
+                        <span class="italic text-gold">dengan budi.</span>
+                    </h1>
+                    <p class="mt-8 lg:mt-10 text-forest/70 text-lg max-w-lg leading-relaxed reveal">
+                        Bimbingan spiritual yang beretika dan penuh empati — membantu anda menemui kedamaian dalam cinta dan rumah tangga.
+                    </p>
+                    <div class="mt-10 flex flex-wrap gap-4 reveal">
+                        <a href="https://wa.me/601167692891" target="_blank" rel="noopener" class="btn-primary">Mulakan Konsultasi</a>
+                        <a href="#perkhidmatan" class="btn-ghost">Lihat Perkhidmatan</a>
+                    </div>
+                </div>
+
+                <!-- Kanan: imej & statistik -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="img-frame aspect-[4/5] bg-forest/5">
+                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=900&auto=format&fit=crop"
+                             alt="Kasih sayang dan keharmonian" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex items-center justify-between mt-6">
+                        <div>
+                            <p class="big-num text-5xl text-forest">15<span class="text-gold">+</span></p>
+                            <p class="eyebrow text-forest/50 mt-1">Tahun Pengalaman</p>
+                        </div>
+                        <div class="w-px h-14 bg-forest/15"></div>
+                        <div>
+                            <p class="big-num text-5xl text-forest">100<span class="text-gold">%</span></p>
+                            <p class="eyebrow text-forest/50 mt-1">Kerahsiaan</p>
+                        </div>
+                        <div class="w-px h-14 bg-forest/15"></div>
+                        <div>
+                            <p class="big-num text-5xl text-forest">7</p>
+                            <p class="eyebrow text-forest/50 mt-1">Jenis Rawatan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MARQUEE HALUS ================= -->
+    <div class="border-y border-forest/10 py-4 overflow-hidden bg-cream-warm/40">
+        <div class="marquee-content">
+            <div class="flex items-center gap-12 pr-12 text-sm text-forest/50 whitespace-nowrap">
+                <span>Pengasih Jarak Jauh</span><span class="text-gold">✦</span>
+                <span>Pemikat Hati</span><span class="text-gold">✦</span>
+                <span>Pemanis Diri</span><span class="text-gold">✦</span>
+                <span>Kasih Sayang</span><span class="text-gold">✦</span>
+                <span>Keharmonian Pasangan</span><span class="text-gold">✦</span>
+                <span>Pemulihan Hubungan</span><span class="text-gold">✦</span>
+                <span>Keyakinan Diri</span><span class="text-gold">✦</span>
+            </div>
+            <div class="flex items-center gap-12 pr-12 text-sm text-forest/50 whitespace-nowrap" aria-hidden="true">
+                <span>Pengasih Jarak Jauh</span><span class="text-gold">✦</span>
+                <span>Pemikat Hati</span><span class="text-gold">✦</span>
+                <span>Pemanis Diri</span><span class="text-gold">✦</span>
+                <span>Kasih Sayang</span><span class="text-gold">✦</span>
+                <span>Keharmonian Pasangan</span><span class="text-gold">✦</span>
+                <span>Pemulihan Hubungan</span><span class="text-gold">✦</span>
+                <span>Keyakinan Diri</span><span class="text-gold">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= PERKHIDMATAN ================= -->
+    <section id="perkhidmatan" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid lg:grid-cols-12 gap-10 mb-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow text-gold mb-4 reveal">Perkhidmatan</p>
+                    <h2 class="font-serif text-4xl lg:text-5xl leading-tight reveal">Senarai<br>khidmat.</h2>
+                </div>
+                <div class="lg:col-span-6 lg:col-start-7 flex items-end">
+                    <p class="text-forest/70 leading-relaxed reveal">Setiap rawatan dijalankan dengan teliti dan beretika. Pendekatan disesuaikan dengan keperluan unik anda — tanpa manipulasi, tanpa unsur yang memudaratkan.</p>
+                </div>
+            </div>
+
+            <!-- Senarai perkhidmatan bergaya editorial (bukan kad) -->
+            <div class="border-t border-forest/15">
+                <!-- Item -->
+                <a href="https://wa.me/601167692891" class="group grid grid-cols-12 items-center py-7 border-b border-forest/15 hover:bg-forest/[0.03] transition px-2 -mx-2">
+                    <span class="col-span-1 font-serif text-forest/40 text-lg">01</span>
+                    <h3 class="col-span-11 md:col-span-5 font-serif text-2xl lg:text-3xl group-hover:text-gold transition">Rawatan Pengasih Jarak Jauh</h3>
+                    <p class="col-span-12 md:col-span-5 text-sm text-forest/60 mt-2 md:mt-0 md:pl-6">Menarik getaran kasih sayang dari jauh, tanpa perlu bersemuka.</p>
+                    <span class="hidden md:flex col-span-1 justify-end text-forest/30 group-hover:text-gold group-hover:translate-x-1 transition">→</span>
+                </a>
+                <a href="https://wa.me/601167692891" class="group grid grid-cols-12 items-center py-7 border-b border-forest/15 hover:bg-forest/[0.03] transition px-2 -mx-2">
+                    <span class="col-span-1 font-serif text-forest/40 text-lg">02</span>
+                    <h3 class="col-span-11 md:col-span-5 font-serif text-2xl lg:text-3xl group-hover:text-gold transition">Rawatan Pemikat Hati</h3>
+                    <p class="col-span-12 md:col-span-5 text-sm text-forest/60 mt-2 md:mt-0 md:pl-6">Membuka pintu hati seseorang agar lebih mesra dan terbuka.</p>
+                    <span class="hidden md:flex col-span-1 justify-end text-forest/30 group-hover:text-gold group-hover:translate-x-1 transition">→</span>
+                </a>
+                <a href="https://wa.me/601167692891" class="group grid grid-cols-12 items-center py-7 border-b border-forest/15 hover:bg-forest/[0.03] transition px-2 -mx-2">
+                    <span class="col-span-1 font-serif text-forest/40 text-lg">03</span>
+                    <h3 class="col-span-11 md:col-span-5 font-serif text-2xl lg:text-3xl group-hover:text-gold transition">Rawatan Pemanis Diri</h3>
+                    <p class="col-span-12 md:col-span-5 text-sm text-forest/60 mt-2 md:mt-0 md:pl-6">Memancarkan aura positif, disenangi oleh orang sekeliling.</p>
+                    <span class="hidden md:flex col-span-1 justify-end text-forest/30 group-hover:text-gold group-hover:translate-x-1 transition">→</span>
+                </a>
+                <a href="https://wa.me/601167692891" class="group grid grid-cols-12 items-center py-7 border-b border-forest/15 hover:bg-forest/[0.03] transition px-2 -mx-2">
+                    <span class="col-span-1 font-serif text-forest/40 text-lg">04</span>
+                    <h3 class="col-span-11 md:col-span-5 font-serif text-2xl lg:text-3xl group-hover:text-gold transition">Rawatan Kasih Sayang</h3>
+                    <p class="col-span-12 md:col-span-5 text-sm text-forest/60 mt-2 md:mt-0 md:pl-6">Memupuk rasa cinta dan kasih yang tulus dalam hubungan.</p>
+                    <span class="hidden md:flex col-span-1 justify-end text-forest/30 group-hover:text-gold group-hover:translate-x-1 transition">→</span>
+                </a>
+                <a href="https://wa.me/601167692891" class="group grid grid-cols-12 items-center py-7 border-b border-forest/15 hover:bg-forest/[0.03] transition px-2 -mx-2">
+                    <span class="col-span-1 font-serif text-forest/40 text-lg">05</span>
+                    <h3 class="col-span-11 md:col-span-5 font-serif text-2xl lg:text-3xl group-hover:text-gold transition">Rawatan Keharmonian Pasangan</h3>
+                    <p class="col-span-12 md:col-span-5 text-sm text-forest/60 mt-2 md:mt-0 md:pl-6">Mengelakkan perselisihan, menguatkan ikatan suami isteri.</p>
+                    <span class="hidden md:flex col-span-1 justify-end text-forest/30 group-hover:text-gold group-hover:translate-x-1 transition">→</span>
+                </a>
+                <a href="https://wa.me/601167692891" class="group grid grid-cols-12 items-center py-7 border-b border-forest/15 hover:bg-forest/[0.03] transition px-2 -mx-2">
+                    <span class="col-span-1 font-serif text-forest/40 text-lg">06</span>
+                    <h3 class="col-span-11 md:col-span-5 font-serif text-2xl lg:text-3xl group-hover:text-gold transition">Rawatan Pemulihan Hubungan</h3>
+                    <p class="col-span-12 md:col-span-5 text-sm text-forest/60 mt-2 md:mt-0 md:pl-6">Membantu menyembuhkan luka perpisahan dan memulihkan komunikasi.</p>
+                    <span class="hidden md:flex col-span-1 justify-end text-forest/30 group-hover:text-gold group-hover:translate-x-1 transition">→</span>
+                </a>
+                <a href="https://wa.me/601167692891" class="group grid grid-cols-12 items-center py-7 border-b border-forest/15 hover:bg-forest/[0.03] transition px-2 -mx-2">
+                    <span class="col-span-1 font-serif text-forest/40 text-lg">07</span>
+                    <h3 class="col-span-11 md:col-span-5 font-serif text-2xl lg:text-3xl group-hover:text-gold transition">Rawatan Keyakinan Diri</h3>
+                    <p class="col-span-12 md:col-span-5 text-sm text-forest/60 mt-2 md:mt-0 md:pl-6">Meningkatkan rasa percaya diri dan ketenangan dalaman.</p>
+                    <span class="hidden md:flex col-span-1 justify-end text-forest/30 group-hover:text-gold group-hover:translate-x-1 transition">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TENTANG ================= -->
+    <section id="tentang" class="bg-forest text-cream py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div class="lg:col-span-5 order-2 lg:order-1 reveal">
+                <div class="img-frame aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=900&auto=format&fit=crop"
+                         alt="Keharmonian pasangan" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="lg:col-span-7 order-1 lg:order-2">
+                <p class="eyebrow text-gold-soft mb-6 reveal">Empati & Pendengaran</p>
+                <h2 class="font-serif text-5xl lg:text-6xl leading-[0.95] reveal">
+                    Bermula<br>dengan<br><span class="italic text-gold-soft">mendengar.</span>
+                </h2>
+                <p class="mt-8 text-cream/70 leading-relaxed max-w-xl reveal">
+                    Setiap perjalanan pemulihan bermula dengan perbincangan yang jujur. Atok Mohd Khoirul percaya setiap individu berhak didengari tanpa prejudis — pendekatan holistik yang menggabungkan kearifan tempatan dan pemahaman emosi moden.
+                </p>
+                <div class="mt-10 grid sm:grid-cols-3 gap-8 border-t border-cream/15 pt-8 reveal">
+                    <div>
+                        <p class="font-serif text-xl text-gold-soft">Privasi</p>
+                        <p class="text-sm text-cream/60 mt-1">Mutlak & terjamin</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-xl text-gold-soft">Jarak Jauh</p>
+                        <p class="text-sm text-cream/60 mt-1">Tanpa perlu hadir</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-xl text-gold-soft">Beretika</p>
+                        <p class="text-sm text-cream/60 mt-1">Tiada pengorbanan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TESTIMONI (CAROUSEL) ================= -->
+    <section id="testimoni" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+                <div>
+                    <p class="eyebrow text-gold mb-4 reveal">Testimoni</p>
+                    <h2 class="font-serif text-4xl lg:text-5xl leading-tight reveal">Kisah mereka.</h2>
+                </div>
+                <div class="flex gap-3 reveal">
+                    <button id="prevBtn" class="w-11 h-11 border border-forest/20 flex items-center justify-center hover:bg-forest hover:text-cream transition" aria-label="Sebelum">←</button>
+                    <button id="nextBtn" class="w-11 h-11 border border-forest/20 flex items-center justify-center hover:bg-forest hover:text-cream transition" aria-label="Seterusnya">→</button>
+                </div>
+            </div>
+
+            <div class="overflow-hidden" id="carouselViewport">
+                <div class="carousel-track" id="testimonialTrack">
+                    <!-- Slide -->
+                    <div class="carousel-slide">
+                        <div class="h-full border-t border-forest/15 pt-6 pr-4">
+                            <p class="font-serif text-xl leading-snug text-forest">“Hubungan saya dengan suami semakin baik selepas rawatan keharmonian. Atok sangat sabar.”</p>
+                            <div class="mt-8 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-forest text-cream flex items-center justify-center text-xs font-medium">S</div>
+                                <div>
+                                    <p class="text-sm font-medium">Siti Nurhaliza</p>
+                                    <p class="text-xs text-forest/50">Selangor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="h-full border-t border-forest/15 pt-6 pr-4">
+                            <p class="font-serif text-xl leading-snug text-forest">“Rawatan pemikat hati buat saya lebih yakin berkomunikasi dengan orang sekeliling.”</p>
+                            <div class="mt-8 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-forest text-cream flex items-center justify-center text-xs font-medium">A</div>
+                                <div>
+                                    <p class="text-sm font-medium">Ahmad Faizal</p>
+                                    <p class="text-xs text-forest/50">Johor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="h-full border-t border-forest/15 pt-6 pr-4">
+                            <p class="font-serif text-xl leading-snug text-forest">“Pengasih jarak jauh berkesan walaupun saya berada di luar negara. Atok sangat amanah.”</p>
+                            <div class="mt-8 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-forest text-cream flex items-center justify-center text-xs font-medium">N</div>
+                                <div>
+                                    <p class="text-sm font-medium">Nadia</p>
+                                    <p class="text-xs text-forest/50">Dubai</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="h-full border-t border-forest/15 pt-6 pr-4">
+                            <p class="font-serif text-xl leading-snug text-forest">“Selepas rawatan pemulihan hubungan, saya dan pasangan dapat berbincang dengan lebih tenang.”</p>
+                            <div class="mt-8 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-forest text-cream flex items-center justify-center text-xs font-medium">R</div>
+                                <div>
+                                    <p class="text-sm font-medium">Rahman</p>
+                                    <p class="text-xs text-forest/50">Pulau Pinang</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="h-full border-t border-forest/15 pt-6 pr-4">
+                            <p class="font-serif text-xl leading-snug text-forest">“Rawatan pemanis diri mengubah cara saya berinteraksi — lebih disenangi rakan sekerja.”</p>
+                            <div class="mt-8 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-forest text-cream flex items-center justify-center text-xs font-medium">M</div>
+                                <div>
+                                    <p class="text-sm font-medium">Melissa</p>
+                                    <p class="text-xs text-forest/50">Kuala Lumpur</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="h-full border-t border-forest/15 pt-6 pr-4">
+                            <p class="font-serif text-xl leading-snug text-forest">“Rawatan keyakinan diri membantu saya bangkit selepas perpisahan. Sokongan Atok sangat baik.”</p>
+                            <div class="mt-8 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-forest text-cream flex items-center justify-center text-xs font-medium">Z</div>
+                                <div>
+                                    <p class="text-sm font-medium">Zulkifli</p>
+                                    <p class="text-xs text-forest/50">Kelantan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="mt-12 h-px bg-forest/15 relative">
+                <div id="progressBar" class="absolute left-0 top-0 h-px bg-gold transition-all duration-300" style="width: 33.33%"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="bg-cream-warm/50 py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4">
+                <p class="eyebrow text-gold mb-4 reveal">Soalan Lazim</p>
+                <h2 class="font-serif text-4xl lg:text-5xl leading-tight reveal">Persoalan<br>yang sering<br>timbul.</h2>
+                <p class="mt-6 text-forest/60 text-sm leading-relaxed reveal max-w-xs">Jika ada persoalan lain, jangan segan untuk bertanya terus kepada Atok.</p>
+            </div>
+            <div class="lg:col-span-8 reveal">
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Bagaimana berkesan rawatan ini?</span>
+                        <span class="indicator"></span>
+                    </button>
+                    <div class="faq-a"><p>Setiap rawatan dirangka berdasarkan keperluan khusus klien. Keberkesanan bergantung pada kesediaan diri, keikhlasan niat, dan faktor persekitaran. Atok akan memberikan panduan jelas sebelum proses bermula.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Bolehkah saya yakin tentang privasi?</span>
+                        <span class="indicator"></span>
+                    </button>
+                    <div class="faq-a"><p>Ya, 100% kerahsiaan diberi jaminan. Segala perbincangan, maklumat peribadi, dan identiti klien tidak akan didedahkan kepada pihak ketiga.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Adakah ia menyalahi hukum atau menggunakan unsur hitam?</span>
+                        <span class="indicator"></span>
+                    </button>
+                    <div class="faq-a"><p>Tidak. Pendekatan berlandaskan kearifan tempatan yang selamat — tanpa unsur memudaratkan diri sendiri atau orang lain, tanpa pengorbanan haiwan atau bahan terlarang.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Berapa lama proses rawatan mengambil masa?</span>
+                        <span class="indicator"></span>
+                    </button>
+                    <div class="faq-a"><p>Tempoh berbeza mengikut jenis rawatan dan keadaan. Ada yang dirasai dalam beberapa hari, ada yang memerlukan pemantauan beberapa minggu. Jangkaan realistik akan diberikan semasa konsultasi.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Adakah saya perlu hadir secara fizikal?</span>
+                        <span class="indicator"></span>
+                    </button>
+                    <div class="faq-a"><p>Tidak perlu. Semua rawatan boleh dijalankan secara jarak jauh melalui WhatsApp atau panggilan suara — memudahkan klien dari seluruh Malaysia mahupun luar negara.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="bg-forest-deep text-cream py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-end">
+            <div class="lg:col-span-8">
+                <p class="eyebrow text-gold-soft mb-6 reveal">Perbincangan Awal · Percuma</p>
+                <h2 class="font-serif text-5xl lg:text-7xl leading-[0.9] reveal">
+                    Mulakan dengan<br><span class="italic text-gold-soft">satu soalan.</span>
+                </h2>
+            </div>
+            <div class="lg:col-span-4 reveal">
+                <p class="text-cream/60 text-sm leading-relaxed mb-8">Hubungi Atok Mohd Khoirul untuk konsultasi tanpa tekanan. Setiap persoalan dijawab dengan penuh empati.</p>
+                <a href="https://wa.me/601167692891" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-gold text-forest-deep px-8 py-4 text-sm font-medium hover:bg-gold-soft transition">
+                    WhatsApp Atok
+                    <span>→</span>
+                </a>
+                <p class="mt-6 text-lg font-medium">011-6769-2891</p>
+                <p class="text-xs text-cream/50 mt-1">Boleh dihubungi 9 pagi – 9 malam</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-forest-deep text-cream/40 py-8 border-t border-cream/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
+            <p>© 2025 Rawatan Sihir Melayu — Atok Mohd Khoirul</p>
+            <p class="tracking-wide">Rawatan pengasih · pemikat · pemanis diri · keharmonian</p>
+        </div>
+    </footer>
+
+    <!-- Floating WA -->
+    <a href="https://wa.me/601167692891" target="_blank" rel="noopener"
+       class="fixed bottom-6 right-6 bg-forest text-cream text-sm font-medium px-5 py-3 rounded-full shadow-xl hover:bg-forest-deep transition z-50">
+        WhatsApp
+    </a>
+
+    <script>
+        // Reveal on scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // FAQ
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+            document.querySelectorAll('.faq-a').forEach(a => a.style.maxHeight = '0px');
+            document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('active'));
+            if (!isOpen) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                btn.classList.add('active');
+            }
+        }
+
+        // Carousel
+        (function () {
+            const track = document.getElementById('testimonialTrack');
+            const slides = track.children;
+            const prev = document.getElementById('prevBtn');
+            const next = document.getElementById('nextBtn');
+            const bar = document.getElementById('progressBar');
+            let index = 0;
+
+            function perView() {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+            function maxIndex() { return Math.max(0, slides.length - perView()); }
+            function update() {
+                index = Math.min(Math.max(index, 0), maxIndex());
+                const pv = perView();
+                track.style.transform = `translateX(-${index * (100 / pv)}%)`;
+                const totalPos = maxIndex() + 1;
+                bar.style.width = ((index + 1) / totalPos * 100) + '%';
+            }
+            prev.addEventListener('click', () => { index--; update(); });
+            next.addEventListener('click', () => { index++; update(); });
+            window.addEventListener('resize', update);
+            update();
+        })();
+    </script>
+</body>
+</html>
