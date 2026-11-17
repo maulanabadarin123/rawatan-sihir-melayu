@@ -430,4 +430,160 @@
                         <span>Berapa lama proses rawatan mengambil masa?</span>
                         <span class="indicator"></span>
                     </button>
-                    <div class="faq-a"><p>Tempoh berbeza mengikut jenis rawatan dan keadaan. Ada yang dirasai
+                    <div class="faq-a"><p>Tempoh berbeza mengikut jenis rawatan dan keadaan. Ada yang dirasai dalam beberapa hari, ada yang memerlukan pemantauan beberapa minggu. Jangkaan realistik akan diberikan semasa konsultasi.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Adakah saya perlu hadir secara fizikal?</span>
+                        <span class="indicator"></span>
+                    </button>
+                    <div class="faq-a"><p>Tidak perlu. Semua rawatan boleh dijalankan secara jarak jauh melalui WhatsApp atau panggilan suara — memudahkan klien dari seluruh Malaysia mahupun luar negara.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="bg-forest-deep text-cream py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-end">
+            <div class="lg:col-span-8">
+                <p class="eyebrow text-gold-soft mb-6 reveal">Perbincangan Awal · Percuma</p>
+                <h2 class="font-serif text-5xl lg:text-7xl leading-[0.9] reveal">
+                    Mulakan dengan<br><span class="italic text-gold-soft">satu soalan.</span>
+                </h2>
+            </div>
+            <div class="lg:col-span-4 reveal">
+                <p class="text-cream/60 text-sm leading-relaxed mb-8">Hubungi Atok Mohd Khoirul untuk konsultasi tanpa tekanan. Setiap persoalan dijawab dengan penuh empati.</p>
+                <a href="https://wa.me/601167692891" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-gold text-forest-deep px-8 py-4 text-sm font-medium hover:bg-gold-soft transition">
+                    WhatsApp Atok
+                    <span>→</span>
+                </a>
+                <p class="mt-6 text-lg font-medium">011-6769-2891</p>
+                <p class="text-xs text-cream/50 mt-1">Boleh dihubungi 9 pagi – 9 malam</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-forest-deep text-cream/40 py-8 border-t border-cream/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
+            <p>© 2025 Rawatan Sihir Melayu — Atok Mohd Khoirul</p>
+            <p class="tracking-wide">Rawatan pengasih · pemikat · pemanis diri · keharmonian</p>
+        </div>
+    </footer>
+
+    <!-- Floating WA -->
+    <a href="https://wa.me/601167692891" target="_blank" rel="noopener"
+       class="fixed bottom-6 right-6 bg-forest text-cream text-sm font-medium px-5 py-3 rounded-full shadow-xl hover:bg-forest-deep transition z-50">
+        WhatsApp
+    </a>
+
+    <script>
+        // Reveal on scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // FAQ
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+            document.querySelectorAll('.faq-a').forEach(a => a.style.maxHeight = '0px');
+            document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('active'));
+            if (!isOpen) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                btn.classList.add('active');
+            }
+        }
+
+        // ===== TESTIMONI IMAGE SLIDER (AUTOPLAY) =====
+        (function () {
+            const track = document.getElementById('tTrack');
+            const slides = Array.from(track.children);
+            const prev = document.getElementById('tPrev');
+            const next = document.getElementById('tNext');
+            const dotsWrap = document.getElementById('tDots');
+            const slider = document.getElementById('tSlider');
+            let index = 0;
+            let timer = null;
+            const AUTOPLAY_MS = 4000;
+
+            function perView() {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+            function maxIndex() { return Math.max(0, slides.length - perView()); }
+
+            function renderDots() {
+                dotsWrap.innerHTML = '';
+                const count = maxIndex() + 1;
+                for (let i = 0; i < count; i++) {
+                    const d = document.createElement('button');
+                    d.className = 't-dot' + (i === index ? ' active' : '');
+                    d.setAttribute('aria-label', 'Pergi ke slaid ' + (i + 1));
+                    d.addEventListener('click', () => { index = i; update(); restart(); });
+                    dotsWrap.appendChild(d);
+                }
+            }
+
+            function update() {
+                index = Math.min(Math.max(index, 0), maxIndex());
+                const pv = perView();
+                track.style.transform = `translateX(-${index * (100 / pv)}%)`;
+
+                // Set active untuk animasi zoom
+                slides.forEach((s, i) => {
+                    s.classList.toggle('is-active', i >= index && i < index + pv);
+                });
+
+                // Update dots
+                Array.from(dotsWrap.children).forEach((d, i) => {
+                    d.classList.toggle('active', i === index);
+                });
+            }
+
+            function goNext() {
+                index = (index >= maxIndex()) ? 0 : index + 1;
+                update();
+            }
+            function goPrev() {
+                index = (index <= 0) ? maxIndex() : index - 1;
+                update();
+            }
+
+            function start() {
+                stop();
+                timer = setInterval(goNext, AUTOPLAY_MS);
+            }
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
+            }
+            function restart() { start(); }
+
+            next.addEventListener('click', () => { goNext(); restart(); });
+            prev.addEventListener('click', () => { goPrev(); restart(); });
+
+            // Pause on hover / touch
+            slider.addEventListener('mouseenter', stop);
+            slider.addEventListener('mouseleave', start);
+            slider.addEventListener('touchstart', stop, { passive: true });
+            slider.addEventListener('touchend', start, { passive: true });
+
+            // Recalc on resize
+            window.addEventListener('resize', () => {
+                renderDots();
+                update();
+            });
+
+            // Init
+            renderDots();
+            update();
+            start();
+        })();
+    </script>
+</body>
+</html>
