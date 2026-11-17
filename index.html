@@ -141,13 +141,16 @@
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-        /* Sembunyikan butang WA header di mobile, ganti dengan hamburger */
+        /* Logik Paparan Responsif */
         @media (max-width: 1023px) {
-            .header-cta { display: none; }
-            .hamburger { display: flex; }
+            .header-cta { display: none !important; } /* Sembunyikan butang telefon di mobile */
+            .hamburger { display: flex !important; }   /* Pastikan hamburger muncul */
+            nav.desktop-nav { display: none !important; } /* Sembunyikan nav desktop */
         }
         @media (min-width: 1024px) {
-            .hamburger { display: none; }
+            .hamburger { display: none !important; }   /* Sembunyikan hamburger di desktop */
+            .header-cta { display: inline-block !important; }
+            nav.desktop-nav { display: flex !important; }
         }
 
         /* ===== TESTIMONI IMAGE SLIDER (AUTOPLAY) ===== */
@@ -176,28 +179,29 @@
 
     <!-- ================= NAV ================= -->
     <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/80 border-b border-forest/10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 lg:px-10 h-16 flex items-center justify-between">
+            
             <!-- LOGO + NAMA PENUH -->
-            <a href="#" class="flex items-center gap-3">
-                <img src="WhatsApp Image 2026-11-15 at 18.50.18 (2).jpeg" alt="Logo Rawatan Sihir Melayu" class="logo-img">
+            <a href="#" class="flex items-center gap-2.5">
+                <img src="WhatsApp Image 2026-11-15 at 18.50.18 (2).jpeg" alt="Logo Rawatan Sihir Melayu" class="rounded-full">
                 <div class="leading-tight">
-                    <span class="block font-serif text-lg text-forest">Rawatan Sihir Melayu</span>
-                    <span class="block text-[10px] tracking-[0.2em] uppercase text-forest/50">Atok Mohd Khoirul</span>
+                    <span class="block font-serif text-base lg:text-lg text-forest">Rawatan Sihir Melayu</span>
+                    <span class="block text-[9px] lg:text-[10px] tracking-[0.2em] uppercase text-forest/50">Atok Mohd Khoirul</span>
                 </div>
             </a>
 
-            <!-- Desktop nav -->
-            <nav class="hidden lg:flex items-center gap-9">
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav hidden lg:flex items-center gap-9">
                 <a href="#perkhidmatan" class="text-sm text-forest/70 hover:text-forest transition">Perkhidmatan</a>
                 <a href="#tentang" class="text-sm text-forest/70 hover:text-forest transition">Tentang</a>
                 <a href="#testimoni" class="text-sm text-forest/70 hover:text-forest transition">Testimoni</a>
                 <a href="#faq" class="text-sm text-forest/70 hover:text-forest transition">Soalan Lazim</a>
             </nav>
 
-            <!-- Desktop CTA -->
+            <!-- Desktop CTA (Telefon) -->
             <a href="https://wa.me/601167692891" target="_blank" rel="noopener" class="btn-primary text-xs header-cta">011-6769-2891</a>
 
-            <!-- Hamburger (mobile) -->
+            <!-- Hamburger (Mobile) -->
             <button id="hamburger" class="hamburger" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
                 <span></span><span></span><span></span>
             </button>
@@ -208,10 +212,12 @@
     <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
         <div class="mobile-panel">
             <div class="flex items-center justify-between mb-6">
-                <span class="eyebrow text-forest/50">Menu</span>
+                <span class="eyebrow text-forest/50">Menu Navigasi</span>
                 <button id="closeMenu" class="w-10 h-10 flex items-center justify-center border border-forest/15 rounded hover:bg-forest/5 transition" aria-label="Tutup menu">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 3l10 10M13 3L3 13" stroke="#0F2A22" stroke-width="1.4" stroke-linecap="round"/>
+                    <!-- Ikon X yang lebih jelas -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F2A22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                 </button>
             </div>
@@ -594,15 +600,10 @@
             });
             closeBtn.addEventListener('click', closeMenu);
 
-            // Tutup bila klik link
             links.forEach(link => link.addEventListener('click', closeMenu));
-
-            // Tutup bila klik overlay (di luar panel)
             menu.addEventListener('click', (e) => {
                 if (e.target === menu) closeMenu();
             });
-
-            // Tutup dengan ESC
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
             });
